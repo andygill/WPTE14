@@ -51,28 +51,30 @@ Haskell, a pure functional programming language,
 is an ideal candidate for performing equational reasoning.
 %
 Equational reasoning, replacing equals with equals,
-is a tunneling mechanism between different equivalent programs.
+is a tunneling mechanism between different, but equivalent, programs.
 %
 The ability to be agile in representation and implementation,
 but retain equivalence, brings many benefits. Post-hoc 
 optimizations are one obvious application of representation
 agility, and one we would like to explore.
 
-Paper and pencil program transformations have been performed
-to improve performance in a principled way; indeed some
-have turned program transformation into an art form.
-But there is only so far a paper and pencil can take you.
-%
-There are also source code development environment
-that provide support for refactoring, such as HaRe.
-These help refactoring, but work at the syntactical
-level, and Haskell is a large and complex language.
-%
+%\end{abstract}
+
 What we want to explore is the mechanization of rewriting, 
 inside real Haskell programs, enabling the prototyping
 of new optimizations, the explicit use of types to direct
 transformations, and perform larger data refinement tasks
 than are currently undertaken.
+%
+Paper and pencil program transformations have been written
+that improve performance in a principled way; indeed some
+have turned the act of program transformation into an art form.
+But there is only so far a paper and pencil can take you.
+%
+There are also source code development environments
+that provide support for refactoring, such as HaRe.
+These work at the syntactical
+level, and Haskell is a large and complex language.
 
 In this talk, we overview HERMIT, the Haskell
 equational reasoning model to implementation tunnel.
@@ -81,26 +83,27 @@ HERMIT operates at the Glasgow Haskell's Core level,
 deep inside GHC, where type information is easy to
 obtain, and the language being rewritten is smaller.
 %
-HERMIT provides three levels of support for helping
+HERMIT provides three levels of support for
 transformation and prototyping: a strategic programming
 base with many typed rewrite primitives, a simple
 shell that can used to interactively request rewrites
 and explore transformation possibilities, and a batch
-language that can mechanize focused, optionally
-program specific optimizations.
+language that can mechanize focused, and optionally
+program specific, optimizations.
 %
-We will demonstrate all three levels, and show how they cooperate.
+We will demonstrate all three of these levels, and show how they cooperate.
 
-The explicit aim of the HERMIT project is to explore the data refinement,
-and the worker/wrapper transformation.
+The explicit aim of the HERMIT project is to explore data refinement,
+and the worker/wrapper transformation, a specific way of mechanizing
+data refinement.
 %
 HERMIT has been successfully used on toy examples, efficient \verb|reverse|,
-tupling-\verb|fib|, and other examples from the literature.
-We will show two larger example of programing transformation using HERMIT.
+tupling-\verb|fib|, and many other examples from the literature.
+We will show two larger and more interesting examples of program transformation using HERMIT.
 Specifically, we will show the mechanization of 
 the making a century program refinement pearl, originally by Richard Bird,
 and the exploration of datatype alternatives in Graham Hutton's 
-implementation of John Conway's Game of life.
+implementation of John Conway's Game of Life.
 \end{abstract}
 
 \end{document}
